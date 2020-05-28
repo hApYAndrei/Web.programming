@@ -1,12 +1,10 @@
-'use strict';
-
 const elem = {};
 
 function runQuestionnaire(){
 	handlersList();
 	addEventListeners();
 	loadQuestionnare();
-	// loadMessages();
+	loadMessages();
 }
 
 async function loadQuestionnare() {
@@ -110,12 +108,12 @@ async function loadQuestionnare() {
 
 // Send the answers and display them in a container
 async function sendAnswers() {
-  const answers = [{asw: elem.checkboxAnswers},
-		{asw: elem.radioAnswer},
-		{asw: elem.inputboX4.value},
-		{asw: elem.inputboX3.value},
+  const answers = [{asw: elem.inputboX1.value},
 		{asw: elem.inputboX2.value},
-		{asw: elem.inputboX1.value}];
+		{asw: elem.inputboX3.value},
+		{asw: elem.inputboX4.value},
+		{asw: elem.radioAnswer},
+		{asw: elem.checkboxAnswers}];
   console.log('Answers', answers);
 	for ( let k = 0; k < answers.length; k++){
 
@@ -134,15 +132,30 @@ async function sendAnswers() {
 			elem.inputboX3.value = '';
 			elem.inputboX4.value = '';
 
-	    const newAnswers = await response.json();
+			const newAnswers = await response.json();
 			emptyContent(elem.answerslist);
-	    showAnswers(newAnswers, elem.answerslist);
-
+			showAnswers(newAnswers, elem.answerslist);
+			//Make the new answers as a global object variable
+			elem.download = newAnswers;
 	  } else {
 
 	    console.log('Failed to send answers', response);
 	  }
 	}
+}
+
+// Function that creates a link with a downloadable file
+function download(content, fileName, contentType) {
+ const a = document.createElement("a");
+ const file = new Blob([content], { type: contentType });
+ a.href = URL.createObjectURL(file);
+ a.download = fileName;
+ a.click();
+}
+
+// This function transform the object in string and it's added to the json file
+function onDownload(){
+ download(JSON.stringify(elem.download), "Answers.json", "text/plain");
 }
 
 // Function that displays the values for the radio buttons
@@ -162,13 +175,14 @@ function displayRadioValue() {
 // Function that display the values of all checked boxes
 function displayCheckboxValue(){
   elem.checkboxes = document.getElementsByName('more_options');
-  let checkboxesChecked = [];
+  let checkboxesChecked = "";
   //Loop through the options
   for (let i=0; i<elem.checkboxes.length; i++) {
      //Add the values of the checked boxes into the array
      if (elem.checkboxes[i].checked) {
 
-        checkboxesChecked.push(" " + elem.checkboxes[i].value);
+        checkboxesChecked += elem.checkboxes[i].value + ", ";
+
      }
 		 elem.checkboxes[i].checked = false;
   }
@@ -191,16 +205,16 @@ function showAnswers(answers, container) {
   }
 }
 
-// async function loadMessages() {
-//   const response = await fetch('answers');
-//   let answers;
-//   if (response.ok) {
-//     answers = await response.json();
-//   } else {
-//     answers = [{ asw: 'failed to load messages :-(' }];
-//   }
-//   showAnswers(answers, elem.answerslist);
-// }
+async function loadMessages() {
+  const response = await fetch('answers');
+  let answers;
+  if (response.ok) {
+    answers = await response.json();
+  } else {
+    answers = [{ asw: 'failed to load messages :-(' }];
+  }
+  showAnswers(answers, elem.answerslist);
+}
 
 // Function that adds event listeners to handlers
 function addEventListeners() {
@@ -219,6 +233,7 @@ function addEventListeners() {
 function handlersList(){
 	elem.answerslist = document.querySelector('#answers');
 	elem.submit = document.querySelector('#submit');
+	elem.download = document.querySelector('#download');
 }
 
 //Run questionnaire when the page loads
