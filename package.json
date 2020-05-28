@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hApYAndrei/Web.Programming#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "sqlite": "^3.0.3",
     "uuid-random": "^1.3.0"
   }
 }
