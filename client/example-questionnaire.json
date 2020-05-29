@@ -7,42 +7,41 @@
       "type": "text"
     },
     {
-      "id": "quest",
-      "text": "What is your quest?",
-      "type": "text"
-    },
-    {
-      "id": "col",
-      "text": "What is your favourite colour?",
-      "type": "text"
-    },
-    {
-      "id": "velo",
-      "text": "What is the air-speed velocity of an unladen swallow?",
+      "id": "age",
+      "text": "What is your age?",
       "type": "number"
     },
     {
-      "id": "lord",
-      "text": "Which is the best lord?",
+      "id": "student",
+      "text": "Are you a student?",
+      "type": "text"
+    },
+    {
+      "id": "course",
+      "text": "What are you studying?",
+      "type": "text"
+    },
+    {
+      "id": "year",
+      "text": "Which year are you?",
       "type": "single-select",
       "options": [
-        "Lord of the Rings",
-        "Lord of the Flies",
-        "Lord of the Dance",
-        "Lorde"
+        "First Year",
+        "Second Year",
+        "Third Year"
       ]
     },
     {
-      "id": "langs",
-      "text": "Which computer languages have you used?",
+      "id": "unitmarks",
+      "text": "What unit marks you had so far?",
       "type": "multi-select",
       "options": [
-        "JavaScript",
-        "Java",
-        "C",
-        "Python",
-        "Ook",
-        "LISP"
+        "70+",
+        "60-69",
+        "50-59",
+        "45-49",
+        "40-44",
+        "No Grades so far"
       ]
     }
   ]
