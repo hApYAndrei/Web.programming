@@ -5,6 +5,8 @@
 --fontSizeButtons: 1.3em;
 --widthButtons: 20%;
 --paddingButtons: 1%;
+--buttonsBackground: #A9A9A9;
+--borderColorButtons: #708090;
 }
 
 * {
@@ -18,8 +20,18 @@ body {
   background: linear-gradient(to left, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+/* Questionnaire Heading */
+h2{
+  font-family: var(--fontFamily);
+  text-align: center;
+  font-size: 300%;
+  padding: 1rem;
+  margin: 5vh 0 8vh 0;
+  color: var(--textColor);
+}
+
+/* Styling for questions */
 li{
-  /* border: 3px solid blue; */
   font-family: var(--fontFamily);
   text-align: left;
   font-size: 150%;
@@ -29,6 +41,17 @@ li{
   list-style-type: decimal;
 }
 
+/* Styling for question options */
+li li{
+  list-style-type: disc;
+  font-size: 80%;
+  margin: 0;
+  width: 30%;
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  display: block;
+}
+
+/* Styling inputs with type text and number */
 input[type=text], [type=number]{
   border: 3px solid grey;
   margin: 0.3rem 0 0.3rem 1.5rem;
@@ -52,21 +75,12 @@ input[type=checkbox]{
   float: right;
 }
 
-li li{
-  list-style-type: disc;
-  font-size: 80%;
-  margin: 0;
-  width: 30%;
-  padding: 0.3rem 0.3rem 0.3rem 1rem;
-  display: block;
-}
-
 #body {
-  /* border: 2px solid white; */
   margin: 3vh 5vw 3vh 5vw;
   padding:  3vh 3vw 0 3vw;
 }
 
+/* Styling for answers */
 #answers{
   font-family: var(--fontFamily);
   color: var(--textColor);
@@ -79,17 +93,10 @@ li li{
   padding: 0.8rem 0.3rem 0.3rem 1rem;
 }
 
-h2{
-  font-family: var(--fontFamily);
-  text-align: center;
-  font-size: 300%;
-  padding: 1rem;
-  margin: 5vh 0 8vh 0;
-  color: var(--textColor);
-}
-
+/* Buttons */
 #submit{
-  border-color: #708090;
+  background: var(--buttonsBackground);
+  border-color: var(--borderColorButtons);
   font-family: var(--fontFamily);
   width: var(--widthButtons);
   padding: var(--paddingButtons);
@@ -100,7 +107,8 @@ h2{
 }
 
 #download{
-  border-color: #708090;
+  background: var(--buttonsBackground);
+  border-color: var(--borderColorButtons);
   font-family: var(--fontFamily);
   width: var(--widthButtons);
   padding: var(--paddingButtons);
@@ -120,6 +128,7 @@ h2{
     border: 2px solid #a29dac;
 }
 
+/* ***************** Mobile Friendly **************** */
 @media screen and (max-width: 480px) {
   input[type=text], [type=number]{
     margin: 0 0 0 3rem;
