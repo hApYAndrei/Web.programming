@@ -4,7 +4,7 @@ function runQuestionnaire(){
 	handlersList();
 	addEventListeners();
 	loadQuestionnare();
-	loadMessages();
+	// loadMessages();
 }
 
 async function loadQuestionnare() {
@@ -205,16 +205,16 @@ function showAnswers(answers, container) {
   }
 }
 
-async function loadMessages() {
-  const response = await fetch('answers');
-  let answers;
-  if (response.ok) {
-    answers = await response.json();
-  } else {
-    answers = [{ asw: 'failed to load messages :-(' }];
-  }
-  showAnswers(answers, elem.answerslist);
-}
+// async function loadMessages() {
+//   const response = await fetch('answers');
+//   let answers;
+//   if (response.ok) {
+//     answers = await response.json();
+//   } else {
+//     answers = [{ asw: 'failed to load messages :-(' }];
+//   }
+//   showAnswers(answers, elem.answerslist);
+// }
 
 // Function that adds event listeners to handlers
 function addEventListeners() {

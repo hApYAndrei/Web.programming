@@ -15,9 +15,9 @@ app.use(express.static('client', { extensions: ['html'] }));
 
 // let answers = []
 
-async function getAnswers(req, res) {
-  res.json(await db.listAnswers());
-}
+// async function getAnswers(req, res) {
+//   res.json(await db.listAnswers());
+// }
 //
 // async function getMessage(req, res) {
 //   const result = await db.findMessage(req.params.id);
@@ -41,7 +41,7 @@ function asyncWrap(f) {
 }
 
 
-app.get('/answers', asyncWrap(getAnswers));
+// app.get('/answers', asyncWrap(getAnswers));
 // app.get('/answers/:id', asyncWrap(getAnswer));
 app.post('/answers', express.json(), asyncWrap(postAnswer));
 
