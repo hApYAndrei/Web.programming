@@ -224,9 +224,7 @@ function addEventListeners() {
 		displayCheckboxValue();
 		sendAnswers();
 	})
-	// elem.submit.addEventListener('click', displayRadioValue);
-  // elem.submit.addEventListener('click', sendAnswers);
-
+  elem.download.addEventListener('click', onDownload);
 }
 
 // Function that creates handlers
