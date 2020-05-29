@@ -30,7 +30,7 @@ async function loadQuestionnare() {
 // Loop through the questions and display them
 	for (let i = 0; i < data.questions.length; i++) {
 
-    const listQuestions = document.createElement('div');
+    const listQuestions = document.createElement('li');
 		listQuestions.textContent = data.questions[i].text;
 
 // Check what kind of question it is, if it has options or not
@@ -47,7 +47,7 @@ async function loadQuestionnare() {
 					const radioButton = document.createElement('input');
 					radioButton.type='radio';
 					radioButton.name='one_option';
-					radioButton.class = "1option"
+					radioButton.class = "oneoption"
 
 //Set the options from the question as a value for each radio button
 					radioButton.value = data.questions[i].options[j];
@@ -108,12 +108,12 @@ async function loadQuestionnare() {
 
 // Send the answers and display them in a container
 async function sendAnswers() {
-  const answers = [{asw: elem.inputboX1.value},
-		{asw: elem.inputboX2.value},
-		{asw: elem.inputboX3.value},
-		{asw: elem.inputboX4.value},
-		{asw: elem.radioAnswer},
-		{asw: elem.checkboxAnswers}];
+	  const answers = [{asw: elem.inputboX1.value},
+			{asw: elem.inputboX2.value},
+			{asw: elem.inputboX3.value},
+			{asw: elem.inputboX4.value},
+			{asw: elem.radioAnswer},
+			{asw: elem.checkboxAnswers}];
   console.log('Answers', answers);
 	for ( let k = 0; k < answers.length; k++){
 

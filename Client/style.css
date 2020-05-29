@@ -1,0 +1,156 @@
+:root{
+--fontFamily: Georgia, serif;
+--textColor: #FFFAFA;
+--borderRadius: 3vmin;
+--fontSizeButtons: 1.3em;
+--widthButtons: 20%;
+--paddingButtons: 1%;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: #283048;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+li{
+  /* border: 3px solid blue; */
+  font-family: var(--fontFamily);
+  text-align: left;
+  font-size: 150%;
+  padding: 0.8rem 0.3rem 0.3rem 1rem;
+  color: var(--textColor);
+  margin-bottom: 1rem;
+  list-style-type: decimal;
+}
+
+input[type=text], [type=number]{
+  border: 3px solid grey;
+  margin: 0.3rem 0 0.3rem 1.5rem;
+  /* width: 100%; */
+  border-radius: var(--borderRadius);
+  padding: 0.3rem 0 0.3rem 1rem;
+  /* display: inline-block; */
+  font-size: 0.6em;
+  -webkit-transition: 0.5s;
+}
+
+input[type=text]:focus, [type=number]:focus {
+  border: 3px solid black;
+}
+
+input[type=radio]{
+  float: right;
+}
+
+input[type=checkbox]{
+  float: right;
+}
+
+li li{
+  list-style-type: disc;
+  font-size: 80%;
+  margin: 0;
+  width: 30%;
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  display: block;
+}
+
+#body {
+  /* border: 2px solid white; */
+  margin: 3vh 5vw 3vh 5vw;
+  padding:  3vh 3vw 0 3vw;
+}
+
+#answers{
+  font-family: var(--fontFamily);
+  color: var(--textColor);
+  font-size: 1.2em;
+  margin: 3vh 5vw 3vh 5vw;
+  padding:  3vh 3vw 3vh 7vw;
+}
+
+#answers p{
+  padding: 0.8rem 0.3rem 0.3rem 1rem;
+}
+
+h2{
+  font-family: var(--fontFamily);
+  text-align: center;
+  font-size: 300%;
+  padding: 1rem;
+  margin: 5vh 0 8vh 0;
+  color: var(--textColor);
+}
+
+#submit{
+  border-color: #708090;
+  font-family: var(--fontFamily);
+  width: var(--widthButtons);
+  padding: var(--paddingButtons);
+  margin: 3% 5% 3% 25%;
+  border-radius: var(--borderRadius);
+  font-size: var(--fontSizeButtons);
+  color: var(--textColor);
+}
+
+#download{
+  border-color: #708090;
+  font-family: var(--fontFamily);
+  width: var(--widthButtons);
+  padding: var(--paddingButtons);
+  margin: 3% 3% 3% 5%;
+  border-radius: var(--borderRadius);
+  font-size: var(--fontSizeButtons);
+  color: var(--textColor);
+}
+
+#submit:hover {
+    background: #444444;
+    border: 2px solid #a29dac;
+}
+
+#download:hover {
+    background: #444444;
+    border: 2px solid #a29dac;
+}
+
+@media screen and (max-width: 480px) {
+  input[type=text], [type=number]{
+    margin: 0 0 0 3rem;
+    display: block;
+  }
+  h2{
+    font-size: 200%;
+  }
+  li{
+    font-size: 110%;
+  }
+  li li{
+    width: 80%;
+  }
+  #submit{
+    width: 60%;
+    font-style: 50%;
+    padding: 0;
+    margin: 0 0 0 20%;
+  }
+  #download{
+    width: 60%;
+    font-style: 50%;
+    padding: 0;
+    margin: 0 0 0 20%;
+  }
+  input[type=button]{
+    display: inline-block;
+  }
+  #answers{
+    font-size: 100%;
+    padding-left: 15%;
+  }
+}
