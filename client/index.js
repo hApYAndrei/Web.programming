@@ -41,7 +41,7 @@ async function loadQuestionnare() {
 				listOptions.textContent = data.questions[i].options[j];
 
 // If the id is "lord", we gonna have a single choice question
-				if (data.questions[i].id == 'lord') {
+				if (data.questions[i].type == 'single-select') {
 
 					const radioButton = document.createElement('input');
 					radioButton.type='radio';
@@ -55,7 +55,7 @@ async function loadQuestionnare() {
 					listOptions.appendChild(radioButton);
 
 // If the id is "langs" we will have multiple choice question
-				} else if (data.questions[i].id == 'langs') {
+} else if (data.questions[i].type == 'multi-select') {
 
 					const checkBox = document.createElement('input');
 					checkBox.type='checkbox';
