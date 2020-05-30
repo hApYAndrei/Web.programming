@@ -20,7 +20,7 @@ async function loadQuestionnare() {
 	}
 
 // Display the name of the questionnare
-  const questionsObject = document.getElementById('body');
+  const questionsObject = document.querySelector('#body');
 	const qTitle = document.createElement('h2');
 
   qTitle.textContent = data.name;
