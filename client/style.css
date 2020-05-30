@@ -48,17 +48,14 @@ li li{
   margin: 0;
   width: 30%;
   padding: 0.3rem 0.3rem 0.3rem 1rem;
-  display: block;
 }
 
 /* Styling inputs with type text and number */
 input[type=text], [type=number]{
   border: 3px solid grey;
   margin: 0.3rem 0 0.3rem 1.5rem;
-  /* width: 100%; */
   border-radius: var(--borderRadius);
   padding: 0.3rem 0 0.3rem 1rem;
-  /* display: inline-block; */
   font-size: 0.6em;
   -webkit-transition: 0.5s;
 }
@@ -129,7 +126,7 @@ input[type=checkbox]{
 }
 
 /* ***************** Mobile Friendly **************** */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   input[type=text], [type=number]{
     margin: 0 0 0 3rem;
     display: block;
