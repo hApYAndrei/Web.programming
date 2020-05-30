@@ -101,6 +101,7 @@ input[type=checkbox]{
   border-radius: var(--borderRadius);
   font-size: var(--fontSizeButtons);
   color: var(--textColor);
+  cursor: pointer;
 }
 
 #download{
@@ -113,6 +114,7 @@ input[type=checkbox]{
   border-radius: var(--borderRadius);
   font-size: var(--fontSizeButtons);
   color: var(--textColor);
+  cursor: pointer;
 }
 
 #submit:hover {
